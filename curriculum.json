@@ -1,0 +1,88 @@
+{
+  "modules": [
+    {
+      "title": "Retrieval",
+      "days": [10, 10]
+    },
+    {
+      "title": "LLM & Prompting",
+      "days": [12, 12]
+    },
+    {
+      "title": "Agents",
+      "days": [13, 13]
+    },
+    {
+      "title": "MCP",
+      "days": [22, 22]
+    },
+    {
+      "title": "Security",
+      "days": [23, 23]
+    },
+    {
+      "title": "Deployment",
+      "days": [27, 28]
+    }
+  ],
+  "days": [
+    {
+      "day": 10,
+      "title": "Retrieval / RAG",
+      "tools": [
+        "Python",
+        "Vector Database",
+        "Embeddings"
+      ]
+    },
+    {
+      "day": 12,
+      "title": "Prompt Engineering",
+      "tools": [
+        "LLMs",
+        "Prompt Engineering"
+      ]
+    },
+    {
+      "day": 13,
+      "title": "AI Agents",
+      "tools": [
+        "LLM",
+        "Agents",
+        "Tools"
+      ]
+    },
+    {
+      "day": 22,
+      "title": "Model Context Protocol",
+      "tools": [
+        "MCP"
+      ]
+    },
+    {
+      "day": 23,
+      "title": "AI Security",
+      "tools": [
+        "Authentication",
+        "Security"
+      ]
+    },
+    {
+      "day": 27,
+      "title": "Deployment",
+      "tools": [
+        "Docker",
+        "Cloud"
+      ]
+    },
+    {
+      "day": 28,
+      "title": "Production AI Systems",
+      "tools": [
+        "APIs",
+        "Cloud",
+        "Monitoring"
+      ]
+    }
+  ]
+}
