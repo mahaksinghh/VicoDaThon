@@ -13,7 +13,7 @@ export async function startInterview(sessionId, candidate) {
     demoSessions.set(sessionId, { candidate, questionIndex: 0, answers: [] });
     return {
       reply: "Welcome, " + candidate.name + "! This is a browser-based demo interview for " +
-        candidate.jobRole + ". Your answers stay in this browser.\\n\\n" + demoQuestions[0],
+        candidate.jobRole + ". Your answers stay in this browser.\n\n" + demoQuestions[0],
       done: false,
       feedback: null
     };
@@ -43,13 +43,13 @@ export async function sendAnswer(sessionId, message) {
 
     if (session.questionIndex < demoQuestions.length) {
       return {
-        reply: "Thanks for sharing your thinking.\\n\\n" + demoQuestions[session.questionIndex],
+        reply: "Thanks for sharing your thinking.\n\n" + demoQuestions[session.questionIndex],
         done: false,
         feedback: null
       };
     }
 
-    const detailedAnswers = session.answers.filter((answer) => answer.trim().split(/\\s+/).length >= 12).length;
+    const detailedAnswers = session.answers.filter((answer) => answer.trim().split(/\s+/).length >= 12).length;
     demoSessions.delete(sessionId);
     return {
       reply: "Interview demo complete. Your answers stayed in this browser; no AI service was called.",
