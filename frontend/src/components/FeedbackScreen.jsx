@@ -53,7 +53,7 @@ function FeedbackScreen({
           </h1>
 
           <p>
-            Here's your AI-generated interview feedback.
+            {DEMO_MODE ? 'This is sample feedback from the browser-only demo.' : 'Here\'s your AI-generated interview feedback.'}
           </p>
 
         </div>
