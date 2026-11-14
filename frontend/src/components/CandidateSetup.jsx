@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Brain, Sparkles, ArrowRight } from "lucide-react";
-import { startInterview } from "../services/api";
+import { DEMO_MODE, startInterview } from "../services/api";
 
 function CandidateSetup({ onStart }) {
   const [name, setName] = useState("");
@@ -33,7 +33,7 @@ function CandidateSetup({ onStart }) {
     try {
       const data = await startInterview(newSessionId, candidate);
 
-      onStart(candidate, newSessionId);
+      onStart(candidate, newSessionId, data);
 
       window.dispatchEvent(
         new CustomEvent("interview-started", {
@@ -73,8 +73,9 @@ function CandidateSetup({ onStart }) {
         </h1>
 
         <p className="hero-description">
-          An AI-powered technical interview that adapts to your
-          coursework, strengths, gaps, and reasoning ability.
+          {DEMO_MODE
+            ? "Try a sample technical interview in your browser. The demo uses fixed prompts and does not send your answers to an AI service."
+            : "An AI-powered technical interview that adapts to your coursework, strengths, gaps, and reasoning ability."}
         </p>
 
         <form onSubmit={handleSubmit}>
@@ -120,7 +121,7 @@ function CandidateSetup({ onStart }) {
 
         <div className="setup-footer">
           <span>✓ Adaptive questions</span>
-          <span>✓ AI feedback</span>
+          <span>✓ {DEMO_MODE ? "Demo feedback" : "AI feedback"}</span>
           <span>✓ System design</span>
         </div>
 
